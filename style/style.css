@@ -1,0 +1,170 @@
+/* _______________________________HTML basic structure________________________________ */
+* {	box-sizing: border-box }
+:root {
+	--mainColor: #ff8ba0;
+	--highlightColor: #ff1b45;
+	--hightlightColorHover: #ff5574;
+	--inputColor: #ffd9df;
+	--inputHover: #ffe5ea;
+}
+body { 
+	margin: 0; padding: 0;
+	font-family: Roboto, sans-serif; font-size: 1rem; line-height: 1.5em; color: #414042; font-weight: 400;
+}
+header {
+	position: sticky; top: 0;
+	display: flex; flex-direction: row; align-items: center;
+	width: 100%; height: 60px;
+	padding: 5px 10px;
+	box-shadow: 0 2px 3px rgba(0,0,0,.3);
+} header::before {
+	content: '';
+  position: absolute; z-index: -1; inset: 0;
+	background-color: rgba(255, 255, 255, 0.5); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+img#banner { height: 100% } a:has(> img#banner) { display: block; height: 100%; }
+@keyframes navHover {	0% { background-color: none }	100% { background-color: #ececec } }
+@keyframes specialNavHover {	0% { background-color: none }	100% { background-color: var(--hightlightColorHover) } }
+nav {	flex-grow: 1;	display: flex; flex-direction: row; align-items: center; justify-content: flex-end }
+nav > a, nav > a:visited {
+	text-decoration: none; color: #414042; font-weight: 550;
+	border-radius: 4px;
+	padding: 6px 10px; margin: 0 10px 0 10px;
+} nav > a:hover, nav > a:visited:hover { animation: navHover 0.2s linear; animation-fill-mode: forwards }
+nav > a.specialNav { background-color: var(--highlightColor); color: #fff } nav a.specialNav:hover { animation: specialNavHover 0.2s linear; animation-fill-mode: forwards }
+div#main {
+	display: flex; flex-direction: column;
+	width: 100%;
+}
+div#main > section:nth-child(2n+1), div#main > section.colored { background-color: var(--mainColor); color: #fff }
+div#main > section > div {
+	max-width: 100%; width: 960px;
+	margin: auto;	padding: 2rem 6rem;
+	text-align: center;
+}
+footer { width: 100%; background-color:#2b303a; color:#fff }
+footer > div {
+	display: flex; flex-direction: row; justify-content: space-between;
+	max-width: 100%; width: 960px;
+	margin: auto;	padding: 4rem 6rem;
+	text-align: center;
+}
+footer > div > section {
+	display: flex; flex-direction: column; justify-items: center; justify-content: center;
+	padding: 0; text-align: left;
+}
+footer > div > section > div { display: flex; flex-direction: row; align-items: center }
+@keyframes footerHover { 0% { color: #fff } 100% { color: var(--mainColor) } }
+footer a, footer a:visited { 
+	display: block; opacity: .8;
+	margin: 5px;
+	color: #fff; text-decoration: none;
+} footer a:hover,footer a:visited:hover { animation: footerHover .2s linear; animation-fill-mode: forwards }
+
+/* ___________________________General Page Formatting___________________________________ */
+a, a:visited { text-decoration: none; color: #414042; font-weight: 600 } a:hover, a:visited:hover { color: #625f64 }
+img.logo { width: 100px; margin: 2px }
+h1 { margin-top: 0; font-weight: 300; line-height: 1.2; font-size: 2.5em; text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px }
+.mobile { display: none }
+button {
+	background-color: #fff;
+	border: none;
+}
+button:hover { filter: invert(20%) contrast(150%) }
+button:active {	filter: invert(20%) }
+
+/* __________________________Forms_________________________ */
+div.flexrow { display:flex; flex-direction:row; align-items:start }
+div.flexrow > div { flex-grow: 1; flex-shrink: 10 } div.flexrow > div.largeFlex { flex-grow: 10; flex-shrink: 1 }
+div.flexrow > div > input { width: 95% }
+span.invalid { color: red; font-weight: bold; font-size: 1.2em }
+@keyframes warningBlink {	0% { background-color: none }	50% { background-color: #b21c1c } 100% { background-color: none } }
+.blinky { animation: warningBlink .5s linear; animation-iteration-count: 2 }
+label,div.label {
+	margin: 0 0 10px 0;
+	cursor: pointer;
+	display: block;
+	font-size: 10pt;
+}
+input[type="radio"],input[type="checkbox"]:not(.simple) { display: none }
+input[type="radio"]+label,input[type="checkbox"]:not(.simple)+label {
+	padding: 10px 20%; margin: 5px 20%; 
+	display: block;	width: 60%;
+	background-color: var(--inputColor); 
+	color: #000; font-size: 12pt;
+	border-radius: 8px;
+}
+input[type="radio"]:checked+label,input[type="checkbox"]:not(.simple):checked+label {
+	background-color: var(--inputHover);
+	font-weight: bold;
+	border: solid black 1px;
+}
+input[type="radio"]+label.inline,input[type="checkbox"]:not(.simple)+label.inline { display:inline; margin: 0; padding: 5px 20px }
+input[type="checkbox"].simple { margin: 0 10px; width: 1.5em; height: 1.5em } input[type="checkbox"].simple+label { display: inline }
+input:not([type="checkbox"],[type="radio"],[type="file"],[type="range"]),textarea {
+	margin: auto; padding: .7em 1em;
+	display: block;
+	cursor: pointer; font-size: 14pt;
+	width: 95%; 
+	border: none; border-radius: 8px; outline: none;
+	background-color: var(--inputColor);
+} 
+textarea:hover,input:not(input[type="radio"],input[type="file"]):hover { background-color: var(--inputHover) }
+textarea:focus,input:not(input[type="radio"],input[type="file"]):focus {
+	background-color: var(--inputHover);
+	border-radius: 0px;
+	border-bottom: 2px solid black;
+}
+textarea { resize: vertical } textarea:placeholder { padding: 5px }
+input[type="date"] { padding: 0.5em }
+input[type="range"] { cursor: crosshair }
+input[type="number"].money { 
+	background-image: url("../image/dollarSign.png");
+	padding-left: 30px; background-size: 20px;
+	background-position: 10px; background-repeat: no-repeat;
+}
+input.simple { display: inline; width: 1.5em; height: 1.5em }
+@font-face { font-family: fancySignature;	src: url("MonsieurLaDoulaise-Regular.ttf") }
+input[type="text"].fancySignature { font-family: fancySignature; font-size: 2rem; font-weight: bold; padding: 5px }
+button.submit {
+	width: 100px; height: 50px;
+	margin: 20px;	padding-left: 0; padding-right: 0; float: right;
+	text-align: center;	color: white; letter-spacing: 1px; font-size: 1em;
+	border-radius: 4px; border: none;
+	cursor: pointer; background-color: green;
+}
+/* ___________________________ Specialty ____________________________________ */
+
+.slider {
+	height: 60vh; width: 98% !important;
+	display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; 
+	margin: 0 1% !important; padding: 0 !important; overflow: hidden;
+	scroll-behavior: smooth;
+}
+.slider > * { height: 100%; padding: 0 5px }
+
+/* ___________________________ Mobile ___________________________________ */
+@media only screen and (width <= 700px) {
+	.desktop { display: none }
+	button#mobileNav { 
+		display: block; 
+		margin-left: auto; margin-right: 20px; padding: 0;
+		height: 30px; width: 30px;
+		border: none; outline: none;
+		background-color: transparent;
+	}
+	button#mobileNav > img { height: 100% }
+	nav {	
+		display: none; flex-direction: column; align-items: center; justify-content: flex-start;
+		position: fixed; right: 0; top: 59px;
+		padding: 20px;
+		box-shadow: -2px 2px 3px rgba(0,0,0,.3);
+	} nav::before {
+		content: '';
+		position: absolute; z-index: -1; inset: 0;
+		background-color: rgba(255, 255, 255, 0.5); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+	}
+	div#main > section > div, footer > div { padding: 4rem 1.5rem }
+	div.flexrow { display:block }
+	input[type="radio"]+label.inline,input[type="checkbox"]:not(.simple)+label.inline { display: block; margin: auto }
+}
