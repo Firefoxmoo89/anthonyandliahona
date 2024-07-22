@@ -62,14 +62,12 @@ footer a, footer a:visited {
 } footer a:hover,footer a:visited:hover { animation: footerHover .2s linear; animation-fill-mode: forwards }
 
 /* ___________________________General Page Formatting___________________________________ */
-a, a:visited { text-decoration: none; color: #414042; font-weight: 600 } a:hover, a:visited:hover { color: #625f64 }
+a, a:visited { text-decoration: none; color: var(--highlightColor); font-weight: 600 } 
+a:hover, a:visited:hover { color: var(--hightlightColorHover) }
 img.logo { width: 100px; margin: 2px }
-h1 { margin-top: 0; font-weight: 300; line-height: 1.2; font-size: 2.5em; text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px }
+h1 { margin-top: 0; font-weight: 300; line-height: 1.2; font-size: 2.5em }
 .mobile { display: none }
-button {
-	background-color: #fff;
-	border: none;
-}
+button { border: none }
 button:hover { filter: invert(20%) contrast(150%) }
 button:active {	filter: invert(20%) }
 
@@ -133,15 +131,6 @@ button.submit {
 	border-radius: 4px; border: none;
 	cursor: pointer; background-color: green;
 }
-/* ___________________________ Specialty ____________________________________ */
-
-.slider {
-	height: 60vh; width: 98% !important;
-	display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; 
-	margin: 0 1% !important; padding: 0 !important; overflow: hidden;
-	scroll-behavior: smooth;
-}
-.slider > * { height: 100%; padding: 0 5px }
 
 /* ___________________________ Mobile ___________________________________ */
 @media only screen and (width <= 700px) {

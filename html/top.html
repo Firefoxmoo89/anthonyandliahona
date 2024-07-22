@@ -4,25 +4,34 @@
   <meta charset="utf-8">
   <base href="../">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="image/icon.svg">
-	<link rel="stylesheet" href="style/style.css?v=D20240711T090022"> 
-	<script src="script/headscript.js?v=D20240711T090022"></script>
+  <link rel="icon" href="image/icon/icon.svg">
+	<link rel="stylesheet" href="style/style.css?v=D20240711T152831"> 
+	<script src="script/headscript.js?v=D20240711T152831"></script>
 
 </head><body>
 
   <div id="root">
   
     <header>
-      <a href="/"><img src="image/icon.svg" alt="heart" height="30">Anthony and Liahona - for Time and Eternity</a>
-      <button id="mobileNav" class="mobile" type="button"><img src="image/optionLines.svg" alt="Menu" width="50" height="50"></button>
-      <script>function scroll(element){element.scrollIntoView({behavior:"smooth", block:"center"})}</script>
+      <a href="/"><img src="image/icon/icon.svg" alt="heart" height="30">Anthony and Liahona - for Time and Eternity</a>
+      <button id="mobileNav" class="mobile" type="button"><img src="image/icon/optionLines.svg" alt="Menu" width="50" height="50"></button>
       <nav>
-        <a id="storyNav" href="#story" onclick="scroll(document.querySelector('#story'))">Our Story</a>
-        <a id="scheduleNav" href="#schedule" onclick="scroll(document.querySelector('#schedule'))">Schedule</a>
-        <a id="registryNav" href="#registry" onclick="scroll(document.querySelector('#registry'))">Registry</a>
-        <a id="galleryNav" href="#gallery" onclick="scroll(document.querySelector('#gallery'))">Gallery</a>
-        <a id="rsvpNav" href="#rsvp" onclick="scroll(document.querySelector('#rsvp'))"class="specialNav">RSVP</a>
+        <a id="storyNav" data-href="#story">Our Story</a>
+        <a id="scheduleNav" data-href="#schedule">Schedule</a>
+        <a id="registryNav" data-href="#registry">Registry</a>
+        <a id="galleryNav" data-href="#gallery">Gallery</a>
+        <a id="rsvpNav" data-href="#rsvp" class="specialNav">RSVP</a>
       </nav>
+      <script>
+        for (element of document.querySelectorAll("nav > a")) {
+          element.addEventListener("click",(event)=>{
+            let element = event.target;
+            scrollTarget = document.querySelector(element.dataset.href.slice(element.dataset.href.search("#")));
+            scrollTarget.scrollIntoView({block:"center"});
+            console.log({element,scrollTarget});
+          });
+        }
+      </script>
     </header>
     
     <div id="main">

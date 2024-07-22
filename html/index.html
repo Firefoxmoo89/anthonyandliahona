@@ -1,7 +1,11 @@
+<section><div id="coverPhoto">
+	<h1>Anthony and Liahona</h1>
+	<p>Sealed for Eternity</p>
+</div></section>
 
 <section id="story"><div>
 	<h1>Our Story</h1>
-	<p>We love each other, in case you couldn't tell. Also Anthony is white and Liahona is black.</p>
+	<p>We love each other, in case you couldn't tell.</p>
 </div></section>
 
 <section id="schedule"><div>
@@ -16,16 +20,56 @@
 
 <section id="gallery"><div>
 	<h1>Gallery</h1>
-	<p>Come see and add to our photos on <a href="https://photos.app.goo.gl/nnu5HZWQsWxjSLrG6"><img src="image/googlePhotos.svg" alt="icon" height="24" width="24"> Google Photos</a>! We would love if you could add any photos you may have taken at the reception so we don't miss any memories!</p>
+	<p>Come see and add to our photos on <a href="https://photos.app.goo.gl/nnu5HZWQsWxjSLrG6">Google Photos</a>! We would love if you could add any photos you may have taken at the reception so we don't miss any memories!</p>
+	<button type="button" id="googlePhotos" target="_blank"><a href="https://photos.app.goo.gl/nnu5HZWQsWxjSLrG6" target="_blank"><img src="image/icon/googlePhotos.svg" alt="icon" height="24" width="24"> Google Photos</a></button>
 </div>
-<div id="imageSlider" class="slider">
-	<img src="image/facebook1.jpg" alt="cute pic" height="400">
-	<img src="image/facebook2.jpg" alt="cute pic" height="400">
-	<img src="image/facebook3.jpg" alt="cute pic" height="400">
-	<img src="image/facebook4.jpg" alt="cute pic" height="400">
-	<img src="image/facebook5.jpg" alt="cute pic" height="400">
-	<img src="image/facebook6.jpg" alt="cute pic" height="400">
-	<img src="image/facebook7.jpg" alt="cute pic" height="400">
+<div id="imageSlider" class="slider" data-index="0">
+	<button type="button" id="slideLeft" style="border-radius:50px;padding:0;margin:2px 5px">
+		<img src="image/icon/arrow.svg" alt="^" style="height:100%;aspect-ratio:1/1;transform:rotate(270deg)" height="20" width="20">
+	</button>
+	<div id="slideContainer">
+		<img src="image/slide/1.jpg" alt="cute pic" height="400">
+		<img src="image/slide/2.jpg" alt="cute pic" height="400">
+		<img src="image/slide/3.jpg" alt="cute pic" height="400">
+		<img src="image/slide/4.jpg" alt="cute pic" height="400">
+		<img src="image/slide/5.jpg" alt="cute pic" height="400">
+		<img src="image/slide/6.jpg" alt="cute pic" height="400">
+		<img src="image/slide/7.jpg" alt="cute pic" height="400">
+		<img src="image/slide/8.jpg" alt="cute pic" height="400">
+		<img src="image/slide/9.jpg" alt="cute pic" height="400">
+		<img src="image/slide/10.jpg" alt="cute pic" height="400">
+		<img src="image/slide/11.jpg" alt="cute pic" height="400">
+		<img src="image/slide/12.jpg" alt="cute pic" height="400">
+		<img src="image/slide/13.jpg" alt="cute pic" height="400">
+		<img src="image/slide/14.jpg" alt="cute pic" height="400">
+		<img src="image/slide/15.jpg" alt="cute pic" height="400">
+		<img src="image/slide/16.jpg" alt="cute pic" height="400">
+		<img src="image/slide/17.jpg" alt="cute pic" height="400">
+		<img src="image/slide/18.jpg" alt="cute pic" height="400">
+		<img src="image/slide/19.jpg" alt="cute pic" height="400">
+		<img src="image/slide/20.jpg" alt="cute pic" height="400">
+		<img src="image/slide/21.jpg" alt="cute pic" height="400">
+		<img src="image/slide/22.jpg" alt="cute pic" height="400">
+		<img src="image/slide/23.jpg" alt="cute pic" height="400">
+		<img src="image/slide/24.jpg" alt="cute pic" height="400">
+		<img src="image/slide/25.jpg" alt="cute pic" height="400">
+		<img src="image/slide/26.jpg" alt="cute pic" height="400">
+		<img src="image/slide/27.jpg" alt="cute pic" height="400">
+		<img src="image/slide/28.jpg" alt="cute pic" height="400">
+		<img src="image/slide/29.jpg" alt="cute pic" height="400">
+		<img src="image/slide/30.jpg" alt="cute pic" height="400">
+		<img src="image/slide/31.jpg" alt="cute pic" height="400">
+		<img src="image/slide/32.jpg" alt="cute pic" height="400">
+		<img src="image/slide/33.jpg" alt="cute pic" height="400">
+		<img src="image/slide/34.jpg" alt="cute pic" height="400">
+		<img src="image/slide/35.jpg" alt="cute pic" height="400">
+	</div>
+	<button type="button" id="slideRight" style="border-radius:50px;padding:0;margin:2px 5px">
+		<img src="image/icon/arrow.svg" alt="⌄" style="height:100%;aspect-ratio:1/1;transform:rotate(90deg)" height="20" width="20">
+	</button>
+	<div id="slideLabels">
+		<span id="slideIndex">0</span>/<span id="slideTotal">35</span>
+	</div>
 </div>
 </section>
 
@@ -50,39 +94,95 @@
 	</div>
 	<textarea id="info" name="info"></textarea><label for="info">Is there anything we should know about people in your group? ex. allergies or other similar information</label>
 	<textarea id="questions" name="questions"></textarea><label for="questions">Do you have any questions for us? We will respond to the given number through text.</label>
-	
 	<button type="button" id="submit" class="submit">Submit</button>
+	
+	<div id="findBox">
+		<span>*Required Fields</span>
+		<div style="margin: 0 10px;font-weight:bold"><span id="requiredIndex">?</span><span>/</span><span id="requiredTotal">?</span></div>
+		<button type="button" id="upFind" style="border-radius:50px;padding:0;margin:2px 5px">
+			<img src="image/icon/arrow.svg" alt="^" style="height:100%;aspect-ratio:1/1" height="20" width="20">
+		</button><button type="button" id="downFind" style="border-radius:50px;padding:0;margin:2px 5px">
+			<img src="image/icon/arrow.svg" alt="⌄" style="height:100%;aspect-ratio:1/1;transform:rotate(180deg)" height="20" width="20">
+		</button>
+	</div>
 </div></section>
-<div id="findBox" style="display: none; top: 65px; right: 5px; padding: 2px; border: 2px solid #888; position: fixed; background-color: #fff; flex-direction: row; align-content: center; justify-content: center; align-items: center;">
-  <span>*Required Fields</span>
-  <div style="margin: 0 10px;font-weight:bold"><span id="requiredIndex">?</span><span>/</span><span id="requiredTotal">?</span></div>
-  <button type="button" id="upFind" style="border-radius:50px;padding:0;margin:2px 5px">
-    <img src="image/upArrow.svg" alt="^" style="height:100%;aspect-ratio:1/1" height="20" width="20">
-  </button><button type="button" id="downFind" style="border-radius:50px;padding:0;margin:2px 5px">
-    <img src="image/downArrow.svg" alt="⌄" style="height:100%;aspect-ratio:1/1" height="20" width="20">
-  </button>
-</div>
+
 
 </div>	<!--main-->
 
 <script>
+	// Submission
   validateInputs(document.querySelector("#rsvp")); constValidate(document.querySelector("#rsvp"));
-submitButton = document.querySelector("#submit"); submitButton.addEventListener("click", event => {
-	ready = validateInputs(document.querySelector("#rsvp")); 
-	if (!ready) { 
-		alert("Uh oh, we missed some information. Please review everything and make sure all fields listed as \"*Required\" are filled.");
-		document.querySelector("#findBox").style.display = "flex";
-		inputFinder(document.querySelector("#rsvp"),["#upFind","#downFind"],["#requiredIndex","#requiredTotal"]);
-		submitForm("/apply", (data) => { console.log("form partially submitted") });
-	}
-	else { if (confirm("Are you ready to submit the application?\nA review of all fields is recommended before submitting\nPlease do not close the page until you recieve a notification that it is done.")) {
-		submitButton.innerHTML = "<img src='image/loadingIcon.gif' alt='loading' width='20' height='20'>";
-		document.querySelector("#findBox").style.display = "none";
-		toggleProcessCursor(document.body);
-		submitForm("/", (response) => {
-			toggleProcessCursor(document.body); alert(response); submitButton.innerHTML = "Submit";
-		});
-	}}
-});
+	submitButton = document.querySelector("#submit"); submitButton.addEventListener("click", event => {
+		ready = validateInputs(document.querySelector("#rsvp")); 
+		if (!ready) { 
+			alert("Uh oh, we missed some information. Please review everything and make sure all fields listed as \"*Required\" are filled.");
+			document.querySelector("#findBox").style.display = "flex";
+			inputFinder(document.querySelector("#rsvp"),["#upFind","#downFind"],["#requiredIndex","#requiredTotal"]);
+			submitForm("/", (data) => { console.log("form partially submitted") });
+		}
+		else { if (confirm("Are you ready to submit the application?\nA review of all fields is recommended before submitting\nPlease do not close the page until you recieve a notification that it is done.")) {
+			submitButton.innerHTML = "<img src='image/icon/loadingIcon.gif' alt='loading' width='20' height='20'>";
+			document.querySelector("#findBox").style.display = "none";
+			toggleProcessCursor(document.body);
+			submitForm("/", (response) => {
+				toggleProcessCursor(document.body); alert(response); submitButton.innerHTML = "Submit";
+			});
+		}}
+	});
+	// Slider
+	slideContainer = document.querySelector("#slideContainer");
+	slideIndex = 0;
+	slideContainer.children[0].style.display = "block";
+	
+	function slide(direction) {
+		indexSpan = document.querySelector("#slideIndex");
+		currentIndex = Number(indexSpan.innerText);
+		if (direction == "left") { 
+			if (currentIndex == 1) { index = requiredList.length-1 }
+			else { index = Number(indexSpan.innerText-2) }
+		} else if (direction == "right") { 
+			if (currentIndex == requiredList.length) { index = 0 }
+			else { index = Number(indexSpan.innerText) }
+		}
+		indexSpan.innerText = index+1;
+		selected = requiredList[index];
+		selected.scrollIntoView({behavior:"smooth",block:"center"});
+		selected.parentElement.classList.add("blinky");
+	} collect();
+	parent.querySelector(selectSelectors[0]).addEventListener("click",event=>{ collect ("up") });
+	parent.querySelector(selectSelectors[1]).addEventListener("click",event=>{ collect ("down") });		
 
 </script>
+<style>
+	#coverPhoto {
+		background-image: url('image/cover.jpg'); background-position: center; background-size: contain; background-repeat: no-repeat;
+		width: 100%; aspect-ratio: 2/3;
+		display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;
+		color:#fff;
+	}
+	#googlePhotos {
+		background-color: var(--highlightColor);
+		border-radius: 5px;
+		padding: 15px;
+		font-size: 1.5em;
+	} #googlePhotos a { color:#fff }
+	.slider {
+	height: 60vh; width: 98% !important;
+	display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; 
+	margin: 0 1% !important; padding: 0 !important; overflow: hidden;
+	scroll-behavior: smooth;
+	}
+	#slideContainer { 
+		height: 100%; width: 100%;
+		display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; 
+	}
+	#slideContainer img { height: 100%; display: none }
+	#findBox {
+		display: none; position: fixed; top: 65px; right: 5px; 
+		padding: 2px; 
+		border: 2px solid #888; 
+		background-color: #fff; 
+		flex-flow: row wrap; align-content: center; justify-content: center; align-items: center;
+	}
+</style>

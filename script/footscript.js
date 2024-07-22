@@ -16,15 +16,3 @@ function changeFooter(blank) {
 	}
 }
 new ResizeObserver(changeFooter).observe(document.body);
-
-daSlider = document.querySelector(".slider");
-slideIndex = 0;
-setInterval(()=>{
-	daSlider.scrollLeft += 2;
-},50);
-setInterval(()=>{
-	if (!isVisible(daSlider.children[slideIndex])) {
-		daSlider.appendChild(daSlider.children[slideIndex].cloneNode());
-		slideIndex += 1;
-	}
-},10000);
