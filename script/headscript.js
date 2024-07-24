@@ -87,10 +87,10 @@ function inputFinder(parent=document,selectSelectors,labelSelectors) {
 			currentIndex = Number(indexSpan.innerText);
 			if (direction == "up") { 
 				if (currentIndex == 1) { index = requiredList.length-1 }
-				else { index = Number(indexSpan.innerText-2) }
+				else { index = currentIndex-2 }
 			} else if (direction == "down") { 
 				if (currentIndex == requiredList.length) { index = 0 }
-				else { index = Number(indexSpan.innerText) }
+				else { index = currentIndex }
 			}
 		}
 		indexSpan.innerText = index+1;
