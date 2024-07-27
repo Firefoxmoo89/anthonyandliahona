@@ -1,7 +1,6 @@
 var http = require('http'); var url = require("url"); var fs = require("fs"); 
 var rad = require("./radicalModule.js"); 
-var mail = require("./mail.js"); //optional mail module
-//optional (and recommended) sentry debugging
+var mail = require("./mail.js"); 
 
 // Change references of script and style files to contain a "v" query paremeter so caches are updated
 datetime = new Date(); datetime = "D"+datetime.toISOString().slice(0,19).replaceAll(":","").replaceAll("-","");

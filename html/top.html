@@ -5,8 +5,12 @@
   <base href="../">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="image/icon/icon.svg">
-	<link rel="stylesheet" href="style/style.css?v=D20240722T230948"> 
-	<script src="script/headscript.js?v=D20240722T230948"></script>
+	<link rel="stylesheet" href="style/style.css?v=D20240725T233723"> 
+	<script src="script/headscript.js?v=D20240725T233723"></script>
+  <meta property="og:title" content="Anthony and Liahona" /> 
+  <meta property="og:description" content="Married and sealed in the Temple and ready for an exciting time at the reception!" /> 
+  <meta property="og:image" content="image/announcementBack.jpg" /> 
+  <meta property="og:url" content="anthonyandliahona.replit.app" /> 
 
 </head><body>
 
@@ -17,7 +21,7 @@
       <button id="mobileNav" class="mobile" type="button"><img src="image/icon/optionLines.svg" alt="Menu" width="50" height="50"></button>
       <nav>
         <a id="storyNav" data-href="#story">Our Story</a>
-        <a id="scheduleNav" data-href="#schedule">Schedule</a>
+        <a id="eventDetailsNav" data-href="#eventDetails">Event Details</a>
         <a id="registryNav" data-href="#registry">Registry</a>
         <a id="galleryNav" data-href="#gallery">Gallery</a>
         <a id="rsvpNav" data-href="#rsvp" class="specialNav">RSVP</a>
@@ -28,7 +32,6 @@
             let element = event.target;
             scrollTarget = document.querySelector(element.dataset.href.slice(element.dataset.href.search("#")));
             scrollTarget.scrollIntoView({block:"center"});
-            console.log({element,scrollTarget});
           });
         }
       </script>
