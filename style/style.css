@@ -27,6 +27,7 @@ img#banner { height: 100% } a:has(> img#banner) { display: block; height: 100%; 
 @keyframes specialNavHover {	0% { background-color: none }	100% { background-color: var(--hightlightColorHover) } }
 nav {	flex-grow: 1;	display: flex; flex-direction: row; align-items: center; justify-content: flex-end }
 nav > a, nav > a:visited {
+	cursor: pointer;
 	text-decoration: none; color: #414042; font-weight: 550;
 	border-radius: 4px;
 	padding: 6px 10px; margin: 0 10px 0 10px;

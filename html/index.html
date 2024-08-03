@@ -47,7 +47,7 @@
 </div>
 <div id="imageSlider" class="slider" data-index="0">
 	<button type="button" id="slideLeft" style="border-radius:50px;padding:2px;position:absolute;left:5px;top:auto">
-		<img src="image/icon/arrow.svg" alt="^" style="height:100%;aspect-ratio:1/1;transform:rotate(270deg)" height="20" width="20">
+		<img src="image/icon/arrow.svg" alt="^" style="aspect-ratio:1/1;transform:rotate(270deg)" height="30" width="30">
 	</button>
 	<div id="slideContainer">
 		<div style="background-image:url('image/slide/1.jpg')" class="slide"></div>
@@ -66,7 +66,7 @@
 		<div style="background-image:url('image/slide/14.jpg')" class="slide"></div>
 	</div>
 	<button type="button" id="slideRight" style="border-radius:50px;padding:2px;position:absolute;right:5px;top:auto">
-		<img src="image/icon/arrow.svg" alt="⌄" style="height:100%;aspect-ratio:1/1;transform:rotate(90deg)" height="20" width="20">
+		<img src="image/icon/arrow.svg" alt="^" style="aspect-ratio:1/1;transform:rotate(90deg)" height="30" width="30">
 	</button>
 	<div id="slideLabels">
 		<span id="slideIndex">1</span>/<span id="slideTotal">35</span>
@@ -74,66 +74,10 @@
 </div>
 </section>
 
-<section id="rsvp"><div>
-	<h1>RSVP</h1>
-	<div class="flexrow">
-		<div>
-			<input required type="text" id="firstName" name="firstName"><label for="firstName">First Name</label>
-		</div><div class="largeFlex">
-			<input required type="text" id="lastName" name="lastName"><label for="lastName">Last Name</label>
-		</div>
-	</div><div class="flexrow">
-		<div class="largeFlex">
-			<input required type="tel" id="phone" name="phone"><label for="phone">Phone Number</label>
-		</div><div>
-			<input required type="number" id="adultCount" name="adultCount"><label for="adultCount">Total # of adults with you</label>
-		</div><div>
-			<input required type="number" id="childCount" name="childCount"><label for="childCount">Total # of children with you</label>
-		</div><div>
-			<input required type="number" id="chance" name="chance"><label for="chance">1-5 chance of making it; 5 = for sure!</label>
-		</div>
-	</div>
-	<textarea id="info" name="info"></textarea><label for="info">Is there anything we should know about people in your group? ex. allergies or other similar information</label>
-	<textarea id="questions" name="questions"></textarea><label for="questions">Do you have any questions for us? We will respond to the given number through text.</label>
-	<button type="button" id="submit" class="submit">Submit</button>
-	
-	<div id="findBox">
-		<span>*Required Fields</span>
-		<div style="margin: 0 10px;font-weight:bold"><span id="requiredIndex">?</span><span>/</span><span id="requiredTotal">?</span></div>
-		<button type="button" id="upFind" style="border-radius:50px;padding:0;margin:2px 5px">
-			<img src="image/icon/arrow.svg" alt="^" style="height:100%;aspect-ratio:1/1" height="20" width="20">
-		</button><button type="button" id="downFind" style="border-radius:50px;padding:0;margin:2px 5px">
-			<img src="image/icon/arrow.svg" alt="⌄" style="height:100%;aspect-ratio:1/1;transform:rotate(180deg)" height="20" width="20">
-		</button>
-	</div>
-</div></section>
-
-
 </div>	<!--main-->
 <script src="script/slider.js"></script>
 <script>
-	// Submission
-  validateInputs(document.querySelector("#rsvp")); constValidate(document.querySelector("#rsvp"));
-	submitButton = document.querySelector("#submit"); submitButton.addEventListener("click", event => {
-		ready = validateInputs(document.querySelector("#rsvp")); 
-		if (!ready) { 
-			alert("Uh oh, we missed some information. Please review everything and make sure all fields listed as \"*Required\" are filled.");
-			document.querySelector("#findBox").style.display = "flex";
-			inputFinder(document.querySelector("#rsvp"),["#upFind","#downFind"],["#requiredIndex","#requiredTotal"]);
-			submitForm("/", (data) => { console.log("form partially submitted") });
-		}
-		else { if (confirm("Are you ready to submit the application?\nA review of all fields is recommended before submitting\nPlease do not close the page until you recieve a notification that it is done.")) {
-			submitButton.innerHTML = "<img src='image/icon/loadingIcon.gif' alt='loading' width='20' height='20'>";
-			document.querySelector("#findBox").style.display = "none";
-			toggleProcessCursor(document.body);
-			submitForm("/", (response) => {
-				toggleProcessCursor(document.body); alert(response); submitButton.innerHTML = "Submit";
-			});
-		}}
-	});
-	// Slider
 	slideshow("#slideContainer",["#slideLeft","#slideRight"],["#slideIndex","#slideTotal"],true);
-	// Story Toggle
 	toggleStory = document.querySelector("#toggleStory"); toggleStory.addEventListener("click",()=>{
 		toggleDisplay('#hiddenStory');
 		toggleDisplay('#hiddenStoryLine','none','inline');
@@ -181,12 +125,5 @@
 		background-color: #333;
 		border: solid 1px #bbb; border-radius: 5px;
 		padding: 5px;
-	}
-	#findBox {
-		display: none; position: fixed; top: 65px; right: 5px; 
-		padding: 2px; 
-		border: 2px solid #888; 
-		background-color: #fff; 
-		flex-flow: row wrap; align-content: center; justify-content: center; align-items: center;
 	}
 </style>
